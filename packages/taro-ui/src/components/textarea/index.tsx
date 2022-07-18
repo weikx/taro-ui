@@ -68,7 +68,8 @@ export default class AtTextarea extends React.Component<AtTextareaProps> {
       selectionEnd,
       fixed,
       textOverflowForbidden = true,
-      height
+      height,
+      holdKeyboard
     } = this.props
 
     const _maxLength = parseInt(maxLength.toString())
@@ -102,6 +103,7 @@ export default class AtTextarea extends React.Component<AtTextareaProps> {
           selectionStart={selectionStart}
           selectionEnd={selectionEnd}
           fixed={fixed}
+          holdKeyboard={holdKeyboard}
           onInput={this.handleInput}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
@@ -134,6 +136,7 @@ AtTextarea.defaultProps = {
   count: true,
   fixed: false,
   height: '',
+  holdKeyboard: false,
   textOverflowForbidden: true,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange: (): void => {}
@@ -158,6 +161,7 @@ AtTextarea.propTypes = {
   textOverflowForbidden: PropTypes.bool,
   fixed: PropTypes.bool,
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  holdKeyboard: PropTypes.bool,
   onLinechange: PropTypes.func,
   onChange: PropTypes.func.isRequired,
   onFocus: PropTypes.func,

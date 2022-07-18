@@ -106,6 +106,11 @@ export interface AtTextareaProps extends AtComponent {
    * 输入框行数变化时调用
    */
   onLinechange?: CommonEventFunction
+  /**
+   * focus时，点击页面的时候不收起键盘
+   * 仅在微信小程序有效
+   */
+  holdKeyboard?: boolean
 }
 
 declare const AtTextarea: ComponentClass<AtTextareaProps>

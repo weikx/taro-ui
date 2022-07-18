@@ -21,7 +21,7 @@ export interface AtInputNumberProps extends AtComponent {
    */
   value: number | string
 
-  customStyle?: CSSProperties
+  customStyle?: CSSProperties | string
   /**
    * 最小值
    * @type {number}
